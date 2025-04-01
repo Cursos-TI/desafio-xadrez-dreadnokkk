@@ -1,32 +1,47 @@
 #include <stdio.h>
 
-// Desafio de Xadrez - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
-// O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
+void movimento_peca (int p, int m, char d []) { // Pointer porque o valor é alterado na função
+    for (p = 0, m = 8; p < m; (p)++) {
+        printf("%s\n", d);
+    }
+}
 
-int main() {
-    // Nível Novato - Movimentação das Peças
-    // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
+int main () {
 
-    // Implementação de Movimentação do Bispo
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
+    printf("Movimento da torre:\n");
+    int peca = 0;
+    int torre = 5;
 
-    // Implementação de Movimentação da Torre
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
+    movimento_peca (peca, torre, "Direita");
+    printf("\n");
 
-    // Implementação de Movimentação da Rainha
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
+    printf("Movimento do bispo:\n");
 
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
+    for (int vertical = 0; vertical < 5; vertical++) {         
+        printf("Cima\t");
+        for (int horizontal = 0; horizontal < 1; horizontal++) {
+            printf("Direita\n");
+        }
+    }
 
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
+    printf("\n");
 
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
+    int rainha = 8;
 
-    return 0;
+    printf("Movimento da rainha:\n");
+    movimento_peca (peca, rainha, "Esquerda");
+
+    printf("\n");
+
+    printf("Movimento do cavalo:\n");
+
+    for (int baixo = 0; baixo <= 2; baixo++) {
+        if (baixo < 2) { // 
+            printf("Cima\n");
+        }
+        for (int esquerda = 0; baixo == 2 && esquerda < 1; esquerda++) {
+            printf("Direita\n");
+        }
+    }
+
 }
