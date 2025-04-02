@@ -1,8 +1,14 @@
 #include <stdio.h>
 
-void movimento_peca (int p, int m, char d []) { // Pointer porque o valor é alterado na função
-    for (p = 0, m = 8; p < m; (p)++) {
+void movimento_peca (int p, int m, char d []){ 
+    for (p = 3, m = 8; p < m; (p)++){
         printf("%s\n", d);
+    }
+}
+
+void movimento_rainha (int a, int b, char c []){
+    for(a = 0, b = 8; a < b; (a)++){
+        printf("%s\n", c);
     }
 }
 
@@ -14,6 +20,7 @@ int main () {
 
     movimento_peca (peca, torre, "Direita");
     printf("\n");
+
 
     printf("Movimento do bispo:\n");
 
@@ -29,17 +36,18 @@ int main () {
     int rainha = 8;
 
     printf("Movimento da rainha:\n");
-    movimento_peca (peca, rainha, "Esquerda");
+    movimento_rainha (peca, rainha , "Esquerda");
+    
 
     printf("\n");
 
     printf("Movimento do cavalo:\n");
 
-    for (int baixo = 0; baixo <= 2; baixo++) {
-        if (baixo < 2) { // 
+    for (int cima = 0; cima <= 2; cima++) {
+        if (cima < 2) { // 
             printf("Cima\n");
         }
-        for (int esquerda = 0; baixo == 2 && esquerda < 1; esquerda++) {
+        for (int esquerda = 0; cima == 2 && esquerda < 1; esquerda++) {
             printf("Direita\n");
         }
     }
